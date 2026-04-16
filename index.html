@@ -222,7 +222,7 @@
       const now = new Date();
 
       let todayTarget = new Date();
-      todayTarget.setHours(1, 30, 0, 0);
+      todayTarget.setHours(1, 0, 0, 0);
       if (now >= todayTarget) {
         todayTarget.setDate(todayTarget.getDate() + 1);
       }
@@ -247,11 +247,11 @@
       }
 
       let displayDate = new Date();
-      if (now.getHours() < 1 || (now.getHours() === 1 && now.getMinutes() < 0)) {
-        displayDate.setDate(displayDate.getDate());
-      } else {
-        displayDate.setDate(displayDate.getDate() + 1);
-      }
+if (now.getHours() < 1) {
+  displayDate.setDate(displayDate.getDate());
+} else {
+  displayDate.setDate(displayDate.getDate() + 1);
+}
 
       document.querySelector(".title-line1").textContent = "서대구FC 새벽조(2W)";
       document.getElementById("work-date").textContent = formatDate(displayDate);
